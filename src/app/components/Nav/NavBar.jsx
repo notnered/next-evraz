@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import logo from '../../../../public/logo.svg';
-import NavmMenuElement from './NavMenuElement';
+import NavMenuElement from './NavMenuElement';
 
 export default function NavBar(){
     return (
@@ -18,10 +18,10 @@ export default function NavBar(){
             </div>
             <div>
                 <ul className='flex gap-4 items-center h-full'>
-                    <NavmMenuElement title='Главная' link='#' dropdown={false}/>
-                    <NavmMenuElement title='Каталог' link='#' dropdown={true}/>
-                    <NavmMenuElement title='Новости' link='#' dropdown={false}/>
-                    <NavmMenuElement title='Контакты' link='#' dropdown={false}/>
+                    <NavMenuElement title='Главная' link='#' dropdown={false}/>
+                    <NavMenuElement title='Каталог' link='#' dropdown={true}/>
+                    <NavMenuElement title='Новости' link='/news' dropdown={false}/>
+                    <NavMenuElement title='Контакты' link='#' dropdown={false}/>
                 </ul>
             </div>
         </nav>

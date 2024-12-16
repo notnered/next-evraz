@@ -11,7 +11,7 @@ const productionCatalog = [
     {id: 5, name: 'Специальные материалы'},
 ]
 
-export default function NavmMenuElement(props){
+export default function NavMenuElement(props){
     const [dropmenu, setDropmenu] = useState(false);
 
     function openDropmenu(){

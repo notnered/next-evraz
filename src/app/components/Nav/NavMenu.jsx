@@ -1,4 +1,4 @@
-import NavmMenuElement from "./NavMenuElement"
+import NavMenuElement from "./NavMenuElement"
 
 export default function NavMenu(){
     return (
