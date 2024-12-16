@@ -12,7 +12,7 @@ const productionCatalog = [
 ]
 
 export default function NavmMenuElement(props){
-    const [dropmenu, setDropmenu] = useState(true)
+    const [dropmenu, setDropmenu] = useState(false);
 
     function openDropmenu(){
         setDropmenu(!dropmenu);
@@ -28,7 +28,7 @@ export default function NavmMenuElement(props){
                         <FaAngleDown className="mt-1.5 ml-0.5 text-orange-500" /> 
                     </span>
                     {dropmenu ? (
-                        <div className='absolute bg-orange-500 top-[78px] -left-[60%] p-1.5 rounded-sm text-white w-56'>
+                        <div className='absolute bg-orange-500 top-[4.5rem] -left-[60%] p-1.5 rounded-sm text-white w-56 z-50'>
                             <ul className=''>
                                 {productionCatalog.map((item) => {
                                     return (

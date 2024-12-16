@@ -4,13 +4,14 @@ import NavmMenuElement from './NavMenuElement';
 
 export default function NavBar(){
     return (
-        <nav className='flex justify-between border-b-2 h-20'>
+        <nav className='flex justify-between h-20 z-40'>
             <div>
                 <Link href='/' className='flex h-full items-center'>
                     <img 
                         src={logo.src} 
-                        alt='logo'
+                        alt='ЕВРАЗ-ЗСМК'
                         className='w-72'
+                        width={72}
                         />
                     {/* <h1 className='font-bold'>ЕВРАЗ-ЗСМК</h1> */}
                 </Link>
