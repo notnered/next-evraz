@@ -5,7 +5,7 @@ export default function GoalsElement(props){
     return (
         <div className="border-[1px] border-[--border-color] min-h-[16rem] h-full flex flex-col max-h-[16rem]">
             <div className="flex items-start pt-4">
-                <EvrazLine width={2} />
+                <EvrazLine />
                 <h1 className="ml-2 text-[1.375rem] font-semibold">{props.id}. {props.title}</h1>
             </div>
             <div className="px-4 py-2 flex flex-col h-full">

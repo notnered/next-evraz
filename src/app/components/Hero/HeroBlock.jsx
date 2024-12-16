@@ -7,13 +7,12 @@ const pageText = `ЕВРАЗ-ЗСМК — один из крупнейших м�
 export default function HeroBlock(){
     
     return (
-        <div className="bg-white my-auto h-fit w-full md:max-w-[30rem] flex flex-col">
-            {/* <div className="flex flex-col ">
+        <div className="bg-white my-auto h-fit w-full md:max-w-[30rem] rounded-r-md flex flex-col">
+            <div className="flex flex-col ">
                 <div className="w-full bg-[--yellow-color] h-2 rounded-tr-md"></div>
                 <div className="w-full bg-[--orange-color] h-2"></div>
                 <div className="w-full bg-[--red-color] h-2"></div>
-            </div> */}
-            <EvrazLine width={'full'} height={2} />
+            </div>
             <div className="flex p-5">
                 <p className="font-medium">{pageText}</p>
             </div>

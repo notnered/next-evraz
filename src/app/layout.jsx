@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="ru">
         <body className={`${font.variable} antialiased container mx-auto max-w-[1440px] lg:px-2`}>
-        <main>{children}</main>
+            {children}
         </body>
         </html>
     );

@@ -1,15 +1,9 @@
-export default function EvrazLine({width, height}){
-    if (!height){
-        height = '2.5';
-    }
-    if (!width){
-        width = '2.5';
-    }
+export default function EvrazLine(){
     return (
-        <div className={`w-${width}`}>
-            <div className={`h-${height} bg-[--yellow-color]`}></div>
-            <div className={`h-${height} bg-[--orange-color]`}></div>
-            <div className={`h-${height} bg-[--red-color]`}></div>
+        <div className={'w-2.5'}>
+            <div className={'h-2.5 bg-[--yellow-color]'}></div>
+            <div className={'h-2.5 bg-[--orange-color]'}></div>
+            <div className={'h-2.5 bg-[--red-color]'}></div>
         </div>
     )
 }

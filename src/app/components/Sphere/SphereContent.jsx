@@ -1,4 +1,4 @@
-import EvrazLine from "../Branding/EvrazLine"
+import EvrazLine from "../Branding/EvrazLine";
 
 export default function SphereContent(props){
     return (
@@ -7,7 +7,7 @@ export default function SphereContent(props){
                 <div className="py-8 h-full w-full flex">
                     {props.inversed ? (
                         <>
-                            <EvrazLine />
+                            <EvrazLine/>
                             <div className="h-full w-full flex pl-2 pr-8">
                                 <p className="font-medium text-xl">{props.description}</p>
                             </div>
@@ -17,7 +17,7 @@ export default function SphereContent(props){
                             <div className="h-full w-full flex pr-2 pl-8">
                                 <p className="font-medium text-xl">{props.description}</p>
                             </div>
-                            <EvrazLine />
+                            <EvrazLine/>
                         </>
                     )}
 
