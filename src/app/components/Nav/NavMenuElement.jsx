@@ -25,10 +25,10 @@ export default function NavmMenuElement(props){
                 <>
                     <span onClick={openDropmenu} className='flex cursor-pointer select-none h-full items-center'>
                         {props.title}
-                        <FaAngleDown className="mt-1.5 ml-0.5 text-orange-500" /> 
+                        <FaAngleDown className="mt-1.5 ml-0.5 text-[--orange-color]" /> 
                     </span>
                     {dropmenu ? (
-                        <div className='absolute bg-orange-500 top-[4.5rem] -left-[60%] p-1.5 rounded-sm text-white w-56 z-50'>
+                        <div className='absolute bg-[--orange-color] top-[4.5rem] -left-[60%] p-1.5 rounded-sm text-white w-56 z-50'>
                             <ul className=''>
                                 {productionCatalog.map((item) => {
                                     return (

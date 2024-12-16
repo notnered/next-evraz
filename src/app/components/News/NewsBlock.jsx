@@ -5,11 +5,12 @@ const newsBlock = [
     {id: 2, title: 'ЕВРАЗ – лидер корпоративной благотворительности', date: '29.11.2024'},
     {id: 3, title: 'ЕВРАЗ увеличит финансирование основных социальных программ в 2025 году', date: '21.11.2024'},
 ]
+const slicedNews = newsBlock.slice(0, 3)
 
 export default function NewsBlock(){
     return (
-        <div className="grid grid-cols-3 gap-[2rem] px-2 my-[2rem]">
-            {newsBlock.map((news) => {
+        <div className="grid grid-cols-3 gap-[2.5rem] px-2 my-[30px]">
+            {slicedNews.map((news) => {
                 return (
                     <NewsSection key={news.id} title={news.title} date={news.date} />
                 )

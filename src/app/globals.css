@@ -4,6 +4,10 @@
 
 :root {
   --background: #ffffff;
+  --border-color: #505050;
+  --yellow-color: #FBB92F; 
+  --orange-color: #EE7918;
+  --red-color: #E42213;
 }
 
 /* @media (prefers-color-scheme: dark) {
