@@ -1,13 +1,11 @@
+import EvrazLine from "../Branding/EvrazLine";
+
 export default function NewsSection(props){
 
     return (
         <div className="border-[1px] border-[--border-color] min-h-[16rem] h-full flex flex-col">
             <div className="flex items-center pt-4">
-                <div className="w-2">
-                    <div className="h-2.5 bg-[#FBB92F]"></div>
-                    <div className="h-2.5 bg-[#EE7918]"></div>
-                    <div className="h-2.5 bg-[#E42213]"></div>
-                </div>
+                <EvrazLine width={2} />
                 <span className="text-gray-600 ml-2 text-base font-semibold">{props.date}</span>
             </div>
             <div className="px-4 py-2 flex flex-col h-full">

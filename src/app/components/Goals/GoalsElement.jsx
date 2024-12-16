@@ -1,13 +1,11 @@
+import EvrazLine from "../Branding/EvrazLine";
+
 export default function GoalsElement(props){
     
     return (
         <div className="border-[1px] border-[--border-color] min-h-[16rem] h-full flex flex-col max-h-[16rem]">
             <div className="flex items-start pt-4">
-                <div className="w-2">
-                    <div className="h-2.5 bg-[--yellow-color]"></div>
-                    <div className="h-2.5 bg-[--orange-color]"></div>
-                    <div className="h-2.5 bg-[--red-color]"></div>
-                </div>
+                <EvrazLine width={2} />
                 <h1 className="ml-2 text-[1.375rem] font-semibold">{props.id}. {props.title}</h1>
             </div>
             <div className="px-4 py-2 flex flex-col h-full">
