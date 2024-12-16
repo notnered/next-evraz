@@ -11,11 +11,15 @@ export const metadata = {
     description: "Ознакомительный сайт Западно-Сибирского Металлургического Завода",
 };
 
+export const viewport = {
+    userScalable: false, 
+}
+
 export default function RootLayout({ children }) {
     return (
         <html lang="ru">
         <body className={`${font.variable} antialiased container mx-auto max-w-[1440px] lg:px-2`}>
-            {children}
+        <main>{children}</main>
         </body>
         </html>
     );
