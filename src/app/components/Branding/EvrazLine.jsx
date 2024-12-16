@@ -5,7 +5,6 @@ export default function EvrazLine({width, height}){
     if (!width){
         width = '2.5';
     }
-    console.log(width, height);
     return (
         <div className={`w-${width}`}>
             <div className={`h-${height} bg-[--yellow-color]`}></div>
