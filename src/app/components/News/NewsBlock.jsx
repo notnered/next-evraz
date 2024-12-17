@@ -1,18 +1,14 @@
 import NewsSection from "./NewsSection";
+import newsData from "./newsPosts";
 
-const newsBlock = [
-    {id: 1, title: 'ЕВРАЗ направит около 1 миллиарда рублей на развитие инженерного образования будущего', date: '04.12.2024'},
-    {id: 2, title: 'ЕВРАЗ – лидер корпоративной благотворительности', date: '29.11.2024'},
-    {id: 3, title: 'ЕВРАЗ увеличит финансирование основных социальных программ в 2025 году', date: '21.11.2024'},
-]
-const slicedNews = newsBlock.slice(0, 3)
+const slicedNews = newsData.slice(0, 3)
 
 export default function NewsBlock(){
     return (
-        <div className="grid grid-cols-3 gap-[2.5rem] px-2 my-[30px]">
+        <div className="grid grid-cols-3 gap-[2.5rem] my-[30px]">
             {slicedNews.map((news) => {
                 return (
-                    <NewsSection key={news.id} title={news.title} date={news.date} />
+                    <NewsSection key={news.id} title={news.title} date={news.date} full={false} />
                 )
             })}
         </div>

@@ -1,4 +1,5 @@
 import EvrazLine from "../Branding/EvrazLine";
+import MainButton from "../Buttons/MainButton";
 
 export default function NewsSection(props){
 
@@ -10,9 +11,18 @@ export default function NewsSection(props){
             </div>
             <div className="px-4 py-2 flex flex-col h-full">
                 <p className="font-semibold text-2xl">{props.title}</p>
-                {/* <div className="mt-auto">
-                    <button className="bg-orange-500 px-2 py-1 rounded-md text-white text-base">Подробнее</button>
-                </div> */}
+                {props.full ? (
+                    (
+                        <>
+                            <div className="py-1.5">
+                                <p className="max-h-72 text-ellipsis overflow-hidden line-clamp-[8]">{props.description}</p>
+                            </div>
+                            <div className="py-1.5">
+                                <MainButton text={'Подробнее'} />
+                            </div>
+                        </>
+                    )
+                ) : null}
             </div>
         </div>
     )
