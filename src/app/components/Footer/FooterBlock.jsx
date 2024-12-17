@@ -17,7 +17,7 @@ const secondList = footerMenuList.slice(3, footerMenuList.length);
 
 export default function FooterBlock(){
     return (
-        <footer className="flex gap-16">
+        <footer className="flex gap-16 py-4">
             <div className="w-full flex flex-col">
                 <FooterBranding />
                 <FooterSocials />
