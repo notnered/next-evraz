@@ -4,10 +4,13 @@
 
 :root {
   --background: #ffffff;
-  --border-color: #505050;
+  --border-color: #b4b4b4;
   --yellow-color: #FBB92F; 
+  --yellow-hover-color: #FBC044;
   --orange-color: #EE7918;
+  --orange-hover-color: #F0862F;
   --red-color: #E42213;
+  --red-hover-color: #E7382B;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -25,8 +28,11 @@ body {
 }
 
 .heroBG {
-  background: url('../../public/hero/hero.jpg') no-repeat;
+  background-image: url('../../public/hero/Heroslides/low.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
+  transition: background-image 0.3s;
+  aspect-ratio: 16/9;
 }

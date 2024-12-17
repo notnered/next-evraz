@@ -18,9 +18,12 @@ export default {
       colors: {
         background: "var(--background)",
         borderСolor: "var(--border-color)",
-        yellowСolor: "var(--yellow-color)", 
+        yellowСolor: "var(--yellow-color)",
+        yellowHoverColor: "var(--yellow-hover-color)",
         orangeСolor: "var(--orange-color)",
+        orangeHoverColor: "var(--orange-hover-color)",
         redСolor: "var(--red-color)",
+        redHoverColor: "var(--red-hover-color)",
       },
     },
   },
