@@ -1,5 +1,14 @@
-export default function MainLayout(){
+import FooterBlock from "../Footer/FooterBlock";
+import NavBar from "../Nav/NavBar";
+
+export default function MainLayout({ children }){
     return (
-        0
+        <>
+        <NavBar />
+            <main className="min-h-screen">
+                {children}
+            </main>
+        <FooterBlock />
+        </>
     )
 }
