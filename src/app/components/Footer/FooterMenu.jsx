@@ -1,3 +1,4 @@
+// REACT & REACT LIBS
 import Link from "next/link";
 
 export default function FooterMenu(props){

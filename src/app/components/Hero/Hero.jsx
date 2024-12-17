@@ -1,9 +1,12 @@
 'use client';
+// REACT & REACT LIBS
 import { useEffect, useState } from 'react';
+// STATIC
 // import hero from '../../../../public/hero/hero.jpg';
 import slide0 from '../../../../public/hero/heroSlides/slide0.jpg';
 import slide1 from '../../../../public/hero/heroSlides/slide1.jpg';
 import slide2 from '../../../../public/hero/heroSlides/slide2.jpg';
+// COMPONENTS
 import HeroBlock from './HeroBlock';
 import HeroSlider from './HeroSlider';
 

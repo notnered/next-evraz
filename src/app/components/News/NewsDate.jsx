@@ -1,6 +1,7 @@
+// COMPONENTS
 import LongEvrazLine from "../Branding/LongEvrazLine";
 import MainButton from "../Buttons/MainButton";
-
+// DATA
 const postsCount = [
     {month: 'Декабрь', count: 2},
     {month: 'Ноябрь', count: 7},
@@ -15,7 +16,6 @@ const postsCount = [
     {month: 'Февраль', count: 4},
     {month: 'Январь', count: 5},
 ]
-
 
 export default function NewsDate(){
     return (

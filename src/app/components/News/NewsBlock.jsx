@@ -1,4 +1,6 @@
+// COMPONENTS
 import NewsSection from "./NewsSection";
+// DATA
 import newsData from "./newsPosts";
 
 const slicedNews = newsData.slice(0, 3)

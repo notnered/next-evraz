@@ -1,3 +1,4 @@
+// COMPONENTS
 import EvrazLine from "../Branding/EvrazLine";
 
 export default function GoalsElement(props){

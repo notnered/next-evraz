@@ -1,6 +1,7 @@
+// COMPONENTS
 import GoalsHeader from "./GoalsHeader";
 import GoalsElement from "./GoalsElement";
-
+// DATA
 const goals = [
     {
         id: 1, 
@@ -27,7 +28,6 @@ const goals = [
 
 export default function GoalsBlock(){
 
-    
     return (
         <div className="flex gap-[2rem] px-2">
             <div className="w-full grid grid-cols-3 gap-x-[2.5rem] gap-y-[1.5rem]">

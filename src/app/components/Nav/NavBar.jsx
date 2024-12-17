@@ -1,4 +1,6 @@
+// REACT & REACT LIBS
 import Link from 'next/link';
+// COMPONENTS
 import NavMenuElement from './NavMenuElement';
 import Logo from '../Branding/Logo';
 

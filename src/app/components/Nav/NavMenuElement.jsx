@@ -1,8 +1,9 @@
 'use client'
+// REACT & REACT LIBS
 import { useState } from 'react'
-import Link from "next/link"
 import { FaAngleDown } from 'react-icons/fa6'
-
+import Link from "next/link"
+// DATA
 const productionCatalog = [
     {id: 1, name: 'Строительная продукция'},
     {id: 2, name: 'Железнодорожная продукция'},

@@ -1,3 +1,4 @@
+// STATIC
 import logo from '../../../../public/logo.svg';
 
 export default function Logo(){

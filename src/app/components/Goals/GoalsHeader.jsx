@@ -1,3 +1,4 @@
+// STATIC
 import goalsHeader from '../../../../public/goals/goalsHeader.png'
 
 export default function GoalsHeader(props){

@@ -1,8 +1,9 @@
+// COMPONENTS
 import FooterBranding from "./FooterBranding";
 import FooterSocials from "./FooterSocials";
 import FooterMenu from "./FooterMenu";
 import BackUpBtn from "../Nav/BackUpBtn";
-
+// DATA
 const footerMenuList = [
     {id: 1, title: 'Карта сайта', link: '#'},
     {id: 2, title: 'Новостной блок', link: '/news'},
@@ -11,7 +12,7 @@ const footerMenuList = [
     {id: 5, title: 'Каталог', link: '#'},
     {id: 6, title: 'Условия пользования', link: '#'},
 ];
-
+// DATA SLICES
 const firstList = footerMenuList.slice(0, 3);
 const secondList = footerMenuList.slice(3, footerMenuList.length);
 

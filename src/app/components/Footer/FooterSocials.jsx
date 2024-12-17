@@ -1,3 +1,4 @@
+// REACT & REACT LIBS
 import { FaVk, FaOdnoklassniki, FaYoutube, FaTelegram } from "react-icons/fa6"
 import Link from "next/link"
 

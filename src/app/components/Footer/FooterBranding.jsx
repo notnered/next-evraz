@@ -1,4 +1,6 @@
+// REACT & REACT LIBS
 import Link from "next/link";
+// COMPONENTS
 import Logo from "../Branding/Logo";
 
 export default function FooterBranding(){

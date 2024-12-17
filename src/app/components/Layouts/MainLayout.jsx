@@ -1,3 +1,4 @@
+// COMPONENTS
 import FooterBlock from "../Footer/FooterBlock";
 import NavBar from "../Nav/NavBar";
 

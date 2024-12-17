@@ -1,9 +1,19 @@
+'use client';
+// REACT & REACT LIBS
+import { useEffect } from "react";
+// COMPONENTS
 import NewsDate from "../News/NewsDate";
 import NewsSection from "../News/NewsSection";
-import newsData from "../News/newsPosts";
 import NewsAd from "../News/NewsAd";
+// DATA
+import newsData from "../News/newsPosts";
+
 
 export default function NewsPage(){
+
+    // useEffect(async () => {
+    //     const data = await newsData;
+    // }, [])
 
     return (
         <div className="my-[30px] flex gap-x-10">

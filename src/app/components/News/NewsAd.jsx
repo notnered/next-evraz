@@ -1,5 +1,7 @@
-import careerPicture from "../../../../public/ad/ad.png";
+// COMPONENTS
 import MainButton from "../Buttons/MainButton";
+// STATIC
+import careerPicture from "../../../../public/ad/ad.png";
 
 // TODO: ПЕРЕДЕЛАТЬ КАРЬЕРНЫЙ БЛОК С НУЛЯ
 
