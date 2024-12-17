@@ -33,7 +33,7 @@ export default function NavMenuElement(props){
                                 {productionCatalog.map((item) => {
                                     return (
                                         <li key={item.id}>
-                                            <Link href='#'>{item.name}</Link>
+                                            <Link href='/catalog'>{item.name}</Link>
                                         </li>
                                     )
                                 })}

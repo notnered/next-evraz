@@ -1,19 +1,13 @@
 import Link from 'next/link';
-import logo from '../../../../public/logo.svg';
 import NavMenuElement from './NavMenuElement';
+import Logo from '../Branding/Logo';
 
 export default function NavBar(){
     return (
-        <nav className='flex justify-between h-20 z-40'>
+        <nav className='bg-white w-full max-w-[1440px] mx-auto flex justify-between h-20 z-40'>
             <div>
                 <Link href='/' className='flex h-full items-center'>
-                    <img 
-                        src={logo.src} 
-                        alt='ЕВРАЗ-ЗСМК'
-                        className='w-72'
-                        width={72}
-                        />
-                    {/* <h1 className='font-bold'>ЕВРАЗ-ЗСМК</h1> */}
+                    <Logo />
                 </Link>
             </div>
             <div>
