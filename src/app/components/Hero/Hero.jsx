@@ -14,7 +14,7 @@ export default function Hero(){
     const [slide, setSlide] = useState(0);
 
     function nextSlide(){
-        slide === 2 ? setSlide(0) : setSlide(slide + 1); 
+        slide === 2 ? setSlide(0) : setSlide(slide + 1);
     }
 
     function prevSlide(){

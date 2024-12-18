@@ -18,7 +18,7 @@ export default function HeroBlock(props){
                 <p className="font-medium">{pageText}</p>
             </div>
             <div className="flex h-full items-end py-4 justify-end px-4 font-medium">
-                {props.slideCount + 1}/3
+                0{props.slideCount + 1}/03
             </div>
         </div>
     )
