@@ -11,7 +11,7 @@ export default function NewsSection(props){
                 <span className="text-gray-600 ml-2 text-base font-semibold">{props.date}</span>
             </div>
             <div className="px-4 py-2 flex flex-col h-full">
-                <p className="font-semibold text-2xl">{props.title}</p>
+                <p className="font-semibold text-2xl line-clamp-6">{props.title}</p>
                 {props.full ? (
                     (
                         <>

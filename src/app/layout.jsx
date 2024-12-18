@@ -21,7 +21,7 @@ export const viewport = {
 export default function AppLayout({ children }) {
     return (
         <html lang="ru">
-        <body className={`${font.variable} antialiased container mx-auto max-w-[1440px] lg:px-2`}>
+        <body className={`${font.variable} antialiased container mx-auto max-w-[1440px] overflow-x-hidden lg:px-2`}>
             {children}
         </body>
         </html>

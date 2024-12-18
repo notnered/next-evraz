@@ -18,13 +18,13 @@ const secondList = footerMenuList.slice(3, footerMenuList.length);
 
 export default function FooterBlock(){
     return (
-        <footer className="flex gap-16 py-4">
+        <footer className="flex lg:gap-x-16 px-4 lg:px-2 flex-col lg:flex-row py-4">
             <div className="w-full flex flex-col">
                 <FooterBranding />
                 <FooterSocials />
             </div>
             <div className="w-full flex flex-col">
-                <div className="flex flex-col gap-y-0.5">
+                <div className="flex flex-col gap-y-1 text-center mb-1 lg:text-left">
                     {firstList.map((element) => {
                         return (
                             <FooterMenu key={element.id} title={element.title} link={element.link} />
@@ -33,7 +33,7 @@ export default function FooterBlock(){
                 </div>
             </div>
             <div className="w-full flex flex-col">
-                <div className="flex flex-col gap-y-0.5">
+                <div className="flex flex-col gap-y-1 text-center lg:text-left">
                     {secondList.map((element) => {
                         return (
                             <FooterMenu key={element.id} title={element.title} link={element.link} />

@@ -29,8 +29,8 @@ const goals = [
 export default function GoalsBlock(){
 
     return (
-        <div className="flex gap-[2rem] px-2">
-            <div className="w-full grid grid-cols-3 gap-x-[2.5rem] gap-y-[1.5rem]">
+        <div className="flex gap-[2rem] px-4 lg:px-2">
+            <div className="w-full grid grid-cols-1 grid-flow-row lg:grid-cols-3 gap-x-[2.5rem] gap-y-[1.5rem]">
                 <GoalsHeader />
                 {goals.map((goal) => {
                     return (

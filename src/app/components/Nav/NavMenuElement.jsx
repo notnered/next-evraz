@@ -24,17 +24,17 @@ export default function NavMenuElement(props){
             {props.dropdown 
             ? (
                 <>
-                    <span onClick={openDropmenu} className='flex cursor-pointer select-none h-full items-center'>
+                    <span onClick={openDropmenu} className='flex cursor-pointer select-none h-full items-center text-black transition-colors duration-300 hover:text-[--red-hover-color]'>
                         {props.title}
                         <FaAngleDown className="mt-1.5 ml-0.5 text-[--orange-color]" /> 
                     </span>
                     {dropmenu ? (
                         <div className='absolute bg-[--orange-color] top-[4.5rem] -left-[60%] p-1.5 rounded-sm text-white w-56 z-50'>
-                            <ul className=''>
+                            <ul className='w-full flex flex-col'>
                                 {productionCatalog.map((item) => {
                                     return (
                                         <li key={item.id}>
-                                            <Link href='/catalog'>{item.name}</Link>
+                                            <Link href='/catalog' className='transition-colors duration-300 hover:bg-[--orange-hover-color] px-1 rounded-sm block'>{item.name}</Link>
                                         </li>
                                     )
                                 })}
@@ -44,7 +44,7 @@ export default function NavMenuElement(props){
                 </>
             )
             : (
-                <Link href={props.link} className='flex items-center'>
+                <Link href={props.link} className='flex items-center text-black transition-colors duration-300 hover:text-[--red-hover-color]'>
                     {props.title}
                 </Link>
             )}

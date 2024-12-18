@@ -36,17 +36,17 @@ const sphereObj = [
 
 export default function SphereBlock(){
     return (
-        <div className="py-[30px]">
-            <div className='px-2'>
+        <div className="py-8">
+            <div className='px-4 lg:px-2'>
                 {sphereObj.map((element) => {
                     return (
                     element.id % 2 !== 0 ? (
-                        <div key={element.id} className='grid grid-cols-3 gap-x-[2.5rem] mb-[30px]'>
+                        <div key={element.id} className='grid grid-cols-1 lg:grid-cols-3 gap-y-8 lg:gap-x-[2.5rem] mb-8'>
                             <SphereHeader key={`header-${element.id}`} title={element.title} imageSrc={element.picture} color={element.color} />
                             <SphereContent key={`content-${element.id}`} description={element.description}/>
                         </div>
                     ) : (
-                        <div key={element.id} className='grid grid-cols-3 gap-x-[2.5rem] mb-[30px]'>
+                        <div key={element.id} className='grid grid-cols-1 lg:grid-cols-3 gap-y-8 lg:gap-x-[2.5rem] mb-8'>
                             <SphereContent key={`content-${element.id}`} description={element.description} inversed={true}/>
                             <SphereHeader key={`header-${element.id}`} title={element.title} imageSrc={element.picture} color={element.color} />
                         </div>
