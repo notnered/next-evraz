@@ -4,6 +4,7 @@ import { useState } from 'react';
 // COMPONENTS
 import ContactHeader from "./ContactHeader";
 import ContactContent from './ContactContent';
+import GeneralContact from './Pages/GeneralContact';
 
 export default function ContactPage(){
 
@@ -14,13 +15,17 @@ export default function ContactPage(){
         setPage(index);
     }
 
-    console.log(page);
+    const ComponentsArray = [
+        <GeneralContact />,
+    ]
 
     return (
         <div className="my-8 flex">
-            <div className="flex w-full">
+            <div className="flex flex-col w-full">
                 <ContactHeader currentPage={page} handlePage={handlePage} />
-                <ContactContent currentPage={page} />
+                <ContactContent currentPage={page}>
+                    {ComponentsArray[page]}
+                </ContactContent>
             </div>
         </div>
     )
