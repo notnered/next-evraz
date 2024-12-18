@@ -7,11 +7,11 @@ export default function ContactModal(props){
 
 
     return (
-        <div className="bg-black/25 fixed flex h-full w-full top-0 left-0">
-            <div className="bg-white flex flex-col w-full h-full my-auto max-h-[700px] mx-auto max-w-[600px] rounded-sm">
+        <div className="bg-black/25 fixed flex h-full w-full top-0 left-0" onClick={props.closeFunc}>
+            <div className="bg-white flex flex-col w-full h-full my-auto max-h-[700px] mx-auto max-w-[600px] rounded-sm z-30" onClick={(e) => e.stopPropagation()}>
                 <div className="flex flex-col px-8 py-8 h-full relative gap-y-2">
                     <div className="absolute top-4 right-4">
-                        <span onClick={props.func} className="cursor-pointer text-2xl transition-colors durataion-200 hover:text-[--orange-color]">
+                        <span onClick={props.closeFunc} className="cursor-pointer text-2xl transition-colors durataion-200 hover:text-[--orange-color]">
                             <FaXmark />
                         </span>
                     </div>
@@ -37,7 +37,7 @@ export default function ContactModal(props){
                         </label>
                     </div>
                     <div>
-                        <MainButton text={'Отправить сообщение'} full={true} />
+                        <MainButton text={'Отправить сообщение'} full={true} func={props.sendFunc} />
                     </div>
                 </div>
             </div>

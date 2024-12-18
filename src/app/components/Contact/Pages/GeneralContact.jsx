@@ -9,10 +9,14 @@ import ContactModal from "../ContactModal";
 
 export default function GeneralContact(){
 
-    const [modal, setModal] = useState(true);
+    const [modal, setModal] = useState(false);
 
     function switchModal(){
         setModal(!modal);
+    }
+
+    function sendMessage(){
+        switchModal();
     }
 
     console.log(modal)
@@ -20,7 +24,7 @@ export default function GeneralContact(){
     return (
         <>
             {modal ? (
-                <ContactModal func={switchModal} />
+                <ContactModal closeFunc={switchModal} sendFunc={sendMessage} />
                 ) : null}
             <div className="w-3/6 flex flex-col">
                 <ContactMap />
