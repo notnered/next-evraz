@@ -5,11 +5,11 @@ import NavBar from "../Nav/NavBar";
 export default function MainLayout({ children }){
     return (
         <>
-        <NavBar />
-            <main className="min-h-screen">
-                {children}
-            </main>
-        <FooterBlock />
+            <NavBar />
+                <main className="min-h-screen pt-20">
+                    {children}
+                </main>
+            <FooterBlock />
         </>
     )
 }

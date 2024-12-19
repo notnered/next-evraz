@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function FooterSocials(){
     return (
         <div>
-            <ul className="flex justify-center gap-2 text-3xl py-4">
+            <ul className="flex justify-center gap-2 text-3xl py-2">
                 <li className="transition-colors duration-200 hover:text-gray-700">
                     <Link href={'//vk.com'} target="_blank">
                         <FaVk />
