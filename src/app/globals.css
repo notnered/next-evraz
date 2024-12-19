@@ -11,6 +11,8 @@
   --orange-hover-color: #F0862F;
   --red-color: #E42213;
   --red-hover-color: #E7382B;
+  --margin-b: 2rem;
+  --margin-s: 1rem;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -38,7 +40,7 @@ body {
 }
 
 .back-btn {
-  animation: btnAppear 0.3s;
+  animation: btnAppear 0.2s;
 }
 
 @keyframes btnAppear {
@@ -49,4 +51,41 @@ body {
     opacity: 1.0;
     transform: translateY(0%);
   }
+}
+
+.sideMenu {
+  animation: sideAppear 0.2s;
+}
+
+@keyframes sideAppear {
+  from {
+    opacity: 0.75;
+    transform: translateX(30%);
+  } to {
+    opacity: 1.0;
+    transform: translateX(0%);
+  }
+}
+
+.catalogDrop {
+  animation: catalogAppear 0.15s;
+}
+
+@keyframes catalogAppear {
+  from {
+    opacity: 0.5;
+    transform: translateY(5%);
+  } to {
+    opacity: 1.0;
+    transform: translateY(0%);
+  }
+}
+
+.scrollSetup {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollSetup::-webkit-scrollbar {
+  display: none;
 }
