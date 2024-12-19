@@ -1,8 +1,12 @@
+'use client';
+// COMPONENTS
 import sphere1 from '../../../../public/sphere/sphere1.jpg';
 import sphere2 from '../../../../public/sphere/sphere2.jpg';
 import sphere3 from '../../../../public/sphere/sphere3.jpg';
 import SphereHeader from './SphereHeader';
 import SphereContent from './SphereContent';
+// REACT & REACT LIBS
+import { useEffect, useState } from 'react';
 
 const sphereObj = [
     {
@@ -34,6 +38,7 @@ const sphereObj = [
     },
 ]
 
+
 export default function SphereBlock(){
     return (
         <div className="py-8">
@@ -47,7 +52,7 @@ export default function SphereBlock(){
                         </div>
                     ) : (
                         <div key={element.id} className='grid grid-cols-1 lg:grid-cols-3 gap-y-8 lg:gap-x-[2.5rem] mb-8'>
-                            <SphereContent key={`content-${element.id}`} description={element.description} inversed={true}/>
+                            <SphereContent key={`content-${element.id}`} description={element.description} inversed={false}/>
                             <SphereHeader key={`header-${element.id}`} title={element.title} imageSrc={element.picture} color={element.color} />
                         </div>
                     )

@@ -2,7 +2,7 @@ import EvrazLine from "../Branding/EvrazLine";
 
 export default function SphereContent(props){
     return (
-        <div className="col-span-2 border-[1px] border-[--border-color]">
+        <div className="col-span-2 order-2 md:order-1 border-[1px] border-[--border-color]">
             <div className="flex h-full">
                 <div className="py-4 lg:py-8 h-full w-full flex">
                     {props.inversed ? (
