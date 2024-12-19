@@ -12,13 +12,13 @@ export default function ContactHeader(props){
     return (
         <>
             <div className="w-full border-b-[1px] border-b-[--border-color]">
-                <div className="flex gap-6">
+                <div className="flex gap-6 overflow-x-scroll scrollSetup text-lg lg:text-xl snap-x">
                     {buttons.map((btn) => {
                         return (
                             <button
                                 key={btn.id}
                                 value={btn.id}
-                                className={`${props.currentPage === btn.id ? 'border-b-[--red-color] text-black' : 'text-gray-600 hover:text-[--orange-color] border-transparent'} pb-2 border-b-4 font-medium transition-colors duration-200`}
+                                className={`${props.currentPage === btn.id ? 'border-b-[--red-color] text-black' : 'text-gray-600 hover:text-[--orange-color] border-transparent'} pb-2 min-w-fit snap-center border-b-4 font-medium transition-colors duration-200`}
                                 onClick={props.handlePage}
                                 >
                                 {btn.text}

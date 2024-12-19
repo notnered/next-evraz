@@ -26,12 +26,12 @@ export default function GeneralContact(){
             {modal ? (
                 <ContactModal closeFunc={switchModal} sendFunc={sendMessage} />
                 ) : null}
-            <div className="w-3/6 flex flex-col">
+            <div className="w-full order-2 md:order-1 md:w-3/6 flex flex-col">
                 <ContactMap />
             </div>
-            <div className="w-3/6 flex flex-col">
+            <div className="w-full order-1 md:order-2 md:w-3/6 flex flex-col">
                 <div>
-                    <h1 className="text-4xl font-semibold text-black">ООО «ЕВРАЗ-ЗСМК»</h1>
+                    <h1 className="text-3xl lg:text-4xl font-semibold text-black">ООО «ЕВРАЗ-ЗСМК»</h1>
                 </div>
                 <div className="flex w-full flex-col gap-y-1 py-1">
                     <div className="w-full flex items-center text-gray-800 text-lg transition-colors duration-200 hover:text-[--orange-color]">

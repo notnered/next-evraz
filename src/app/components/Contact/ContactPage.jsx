@@ -20,7 +20,7 @@ export default function ContactPage(){
     ]
 
     return (
-        <div className="my-8 flex">
+        <div className="my-8 flex px-4">
             <div className="flex flex-col w-full">
                 <ContactHeader currentPage={page} handlePage={handlePage} />
                 <ContactContent currentPage={page}>

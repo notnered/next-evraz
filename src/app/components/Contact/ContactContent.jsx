@@ -14,7 +14,7 @@ const array = [GeneralContact, ]
 export default function ContactContent({currentPage, children}){
 
     return (
-        <div className="border-[1px] border-[--border-color] p-8 gap-x-8 flex my-8">
+        <div className="border-[1px] border-[--border-color] p-4 lg:p-8 md:gap-x-8 gap-y-4 flex flex-col md:flex-row my-8">
             {children}
         </div>
     )
