@@ -32,7 +32,7 @@ export default function NewsDate(){
                     </ul>
                 </div>
             </div>
-            <div className="py-2.5">
+            <div className="pt-4 pb-8 md:py-4">
                 <MainButton text={'Сбросить фильтры'} full={true}/>
             </div>
         </div>
