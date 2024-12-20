@@ -15,8 +15,10 @@ export default function ContactPage(){
         setPage(index);
     }
 
+    let componentID = 1;
+
     const ComponentsArray = [
-        <GeneralContact />,
+        <GeneralContact key={componentID++} />,
     ]
 
     return (
