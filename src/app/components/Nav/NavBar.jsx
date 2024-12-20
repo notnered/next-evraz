@@ -40,7 +40,7 @@ export default function NavBar(){
 
     return (
         <>
-            <nav className='bg-white w-full max-w-[1440px] mx-auto fixed flex justify-between h-20 z-40 px-2.5'>
+            <nav className='bg-white w-full max-w-[1440px] mx-auto flex justify-between h-20 z-40 px-2.5'>
                 <div>
                     <Link href='/' className='flex h-full items-center'>
                         <Logo />
