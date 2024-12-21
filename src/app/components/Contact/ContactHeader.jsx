@@ -7,7 +7,6 @@ const buttons = [
     {id: 4, text: 'Соискателям'},
 ]
 
-
 export default function ContactHeader(props){
     return (
         <>

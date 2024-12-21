@@ -4,13 +4,6 @@ import { FaRegMessage } from "react-icons/fa6";
 // COMPONENTS
 import GeneralContact from "./Pages/GeneralContact";
 
-
-// const componentsObj = [
-//     {id: 0, component: GeneralContact},
-// ]
-
-const array = [GeneralContact, ]
-
 export default function ContactContent({currentPage, children}){
 
     return (

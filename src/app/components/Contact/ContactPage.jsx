@@ -5,10 +5,14 @@ import { useState } from 'react';
 import ContactHeader from "./ContactHeader";
 import ContactContent from './ContactContent';
 import GeneralContact from './Pages/GeneralContact';
+import BuyersContact from './Pages/BuyersContact';
+import PartnersContact from './Pages/PartnersContact';
+import MediaContact from './Pages/MediaContact';
+import ApplicationContact from './Pages/ApplicationContact';
 
 export default function ContactPage(){
 
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(2);
 
     function handlePage(event){
         let index = parseInt(event.target.value);
@@ -19,6 +23,10 @@ export default function ContactPage(){
 
     const ComponentsArray = [
         <GeneralContact key={componentID++} />,
+        <BuyersContact key={componentID++} />,
+        <PartnersContact key={componentID++} />,
+        <MediaContact key={componentID++} />,
+        <ApplicationContact key={componentID++} />,
     ]
 
     return (
