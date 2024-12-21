@@ -89,3 +89,17 @@ body {
 .scrollSetup::-webkit-scrollbar {
   display: none;
 }
+
+.modalWindow {
+  animation: modalAppear 0.2s;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0.75;
+    transform: translateY(15%);
+  } to {
+    opacity: 1.0;
+    transform: translateY(0%);
+  }
+}
