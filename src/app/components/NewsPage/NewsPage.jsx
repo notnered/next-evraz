@@ -4,7 +4,6 @@ import { useEffect } from "react";
 // COMPONENTS
 import NewsDate from "../News/NewsDate";
 import NewsSection from "../News/NewsSection";
-import NewsAd from "../News/NewsAd";
 // DATA
 import newsData from "../News/newsPosts";
 
@@ -26,7 +25,6 @@ export default function NewsPage(){
             </div>
             <div className="w-full order-1 md:order-2 md:w-1/4 flex flex-col">
                 <NewsDate />
-                {/* <NewsAd /> */}
             </div>
         </div>
     )

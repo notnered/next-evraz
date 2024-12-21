@@ -1,7 +1,9 @@
 // COMPONENTS
+import { useEffect, useState } from "react";
 import LongEvrazLine from "../Branding/LongEvrazLine";
 import MainButton from "../Buttons/MainButton";
 // DATA
+// import newsPosts from "./newsPosts";
 const postsCount = [
     {month: 'Декабрь', count: 2},
     {month: 'Ноябрь', count: 7},
@@ -18,11 +20,13 @@ const postsCount = [
 ]
 
 export default function NewsDate(){
+
     return (
         <div className="flex flex-col">
             <div className="border-[1px] border-[--border-color] h-fit">
-                <LongEvrazLine />
+                {/* <LongEvrazLine /> */}
                 <div className="px-2 py-2">
+                    <h1 className="text-xl font-medium">Новости за 2024 год</h1>
                     <ul className="flex flex-col gap-y-0.5">
                         {postsCount.map((post, index) => {
                             return (
