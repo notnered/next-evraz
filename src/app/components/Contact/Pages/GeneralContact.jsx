@@ -19,8 +19,6 @@ export default function GeneralContact(){
         switchModal();
     }
 
-    console.log(modal)
-
     return (
         <>
             {modal ? (
