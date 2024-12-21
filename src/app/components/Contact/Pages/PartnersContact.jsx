@@ -6,7 +6,7 @@ import { TbBinaryTree } from "react-icons/tb";
 
 export default function PartnersContact(){
     return (
-        <div>
+        <div className="w-full">
             <div className="py-4">
                 <h1 className="text-3xl font-semibold">
                     Политика в области закупок
