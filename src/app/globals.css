@@ -29,6 +29,12 @@ body {
   font-family: var(--font-family);
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1.125em;
+  }
+}
+
 .heroBG {
   background-image: url('../../public/hero/Heroslides/low.jpg');
   background-repeat: no-repeat;
