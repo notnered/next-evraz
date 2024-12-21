@@ -12,14 +12,14 @@ import ApplicationContact from './Pages/ApplicationContact';
 
 export default function ContactPage(){
 
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(0);
 
     function handlePage(event){
         let index = parseInt(event.target.value);
         setPage(index);
     }
 
-    let componentID = 1;
+    let componentID = 0;
 
     const ComponentsArray = [
         <GeneralContact key={componentID++} />,

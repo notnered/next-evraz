@@ -16,7 +16,7 @@ export default function ContactModal(props){
                         </span>
                     </div>
                     <div>
-                        <h1 className="font-medium text-2xl">Отправить сообщение</h1>
+                        <h1 className="font-medium text-2xl">Форма обратной связи</h1>
                     </div>
                     <div>
                         <label className="flex flex-col">
