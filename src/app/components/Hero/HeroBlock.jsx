@@ -15,11 +15,11 @@ export default function HeroBlock(props){
                 <div className="w-full bg-[--red-color] h-2"></div>
             </div>
             <div className="flex pt-8 pb-4 px-4">
-                <p className="font-medium">{pageText}</p>
+                <p className="font-medium ">{pageText}</p>
             </div>
-            <div className="flex h-full items-end py-4 justify-end px-4 font-medium">
+            {/* <div className="flex h-full items-end py-4 justify-end px-4 font-medium">
                 0{props.slideCount + 1}/03
-            </div>
+            </div> */}
         </div>
     )
 }
