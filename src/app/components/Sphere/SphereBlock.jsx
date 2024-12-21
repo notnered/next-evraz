@@ -46,12 +46,12 @@ export default function SphereBlock(){
                 {sphereObj.map((element) => {
                     return (
                     element.id % 2 !== 0 ? (
-                        <div key={element.id} className='grid grid-cols-1 lg:grid-cols-3 gap-y-8 lg:gap-x-[2.5rem] mb-8'>
+                        <div key={element.id} className='grid grid-cols-1 lg:grid-cols-3 gap-y-4 lg:gap-y-8 lg:gap-x-[2.5rem] mb-8'>
                             <SphereHeader key={`header-${element.id}`} title={element.title} imageSrc={element.picture} color={element.color} />
                             <SphereContent key={`content-${element.id}`} description={element.description}/>
                         </div>
                     ) : (
-                        <div key={element.id} className='grid grid-cols-1 lg:grid-cols-3 gap-y-8 lg:gap-x-[2.5rem] mb-8'>
+                        <div key={element.id} className='grid grid-cols-1 lg:grid-cols-3 gap-y-4 lg:gap-y-8 lg:gap-x-[2.5rem] mb-8'>
                             <SphereContent key={`content-${element.id}`} description={element.description} inversed={false}/>
                             <SphereHeader key={`header-${element.id}`} title={element.title} imageSrc={element.picture} color={element.color} />
                         </div>
