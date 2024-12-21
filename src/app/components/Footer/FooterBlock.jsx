@@ -8,8 +8,8 @@ const footerMenuList = [
     {id: 1, title: 'Карта сайта', link: '#'},
     {id: 2, title: 'Новостной блок', link: '/news'},
     {id: 3, title: 'Антикоррупционная политика', link: '#'},
-    {id: 4, title: 'Контакты', link: '#'},
-    {id: 5, title: 'Каталог', link: '#'},
+    {id: 4, title: 'Контакты', link: '/contact'},
+    {id: 5, title: 'Каталог', link: '/catalog'},
     {id: 6, title: 'Условия пользования', link: '#'},
 ];
 // DATA SLICES
