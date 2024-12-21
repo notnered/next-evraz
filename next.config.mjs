@@ -11,12 +11,12 @@ const nextConfig = {
                         value: "true" },
                     { 
                         key: "Access-Control-Allow-Origin", 
-                        value: "/" },
+                        value: "*" },
                     { 
                         key: "Access-Control-Allow-Methods", 
                         value: "GET, DELETE, PATCH, POST, PUT, OPTIONS" },
                     {
-                         key: 
+                        key: 
                         "Access-Control-Allow-Headers", 
                         value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Authorization, Content-MD5, Content-Type, Date, X-Api-Version" },
                     {
