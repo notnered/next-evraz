@@ -136,3 +136,39 @@ const queryAggregate = async () => {
         prisma.$disconnect();
     }
 };
+
+const queryOrderBy = async () => {
+    try {
+        const queryOutput = await prisma.users.findMany({
+            where: {
+                firstName: true,
+            },
+            orderBy: [{
+                // desc - descending, asc - ascending
+                lastName: 'asc',
+            }, {
+                createdAt: 'desc',
+            }]
+        });
+        return queryOutput;
+    } catch (error) {
+        console.error(error);
+    } finally {
+        prisma.$disconnect();
+    }
+};
+
+
+const querySkipTake = async () => {
+    try {
+        const queryOutput = await prisma.users.findMany({    
+            skip: 0,
+            take: 3,
+        })
+        return queryOutput;
+    } catch (error) {
+        console.error(error);
+    } finally {
+        prisma.$disconnect();
+    }
+};
