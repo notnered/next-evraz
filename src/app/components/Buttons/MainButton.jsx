@@ -1,6 +1,5 @@
 export default function MainButton(props){
 
-
     return (
         <>
             {props.full ? (
