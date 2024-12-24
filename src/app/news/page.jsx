@@ -1,9 +1,9 @@
 // COMPONENTS
-import Hero from "../components/Hero/Hero";
-import MainLayout from "../components/Layouts/MainLayout";
-import NewsPage from "../components/NewsPage/NewsPage";
+import Hero from '../components/Hero/Hero';
+import MainLayout from '../components/Layouts/MainLayout';
+import NewsPage from '../components/NewsPage/NewsPage';
 
-export default function News(){
+export default function News() {
     return (
         <>
             <MainLayout>
@@ -11,5 +11,5 @@ export default function News(){
                 <NewsPage />
             </MainLayout>
         </>
-    )
+    );
 }
