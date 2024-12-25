@@ -34,7 +34,7 @@ export default function NavMenuElement(props){
                                 {productionCatalog.map((item) => {
                                     return (
                                         <li key={item.id}>
-                                            <Link href='/catalog' className='transition-colors duration-200 hover:bg-[--orange-hover-color] px-1 rounded-sm block'>{item.name}</Link>
+                                            <Link href={`/catalog`} className='transition-colors duration-200 hover:bg-[--orange-hover-color] px-1 rounded-sm block'>{item.name}</Link>
                                         </li>
                                     )
                                 })}
