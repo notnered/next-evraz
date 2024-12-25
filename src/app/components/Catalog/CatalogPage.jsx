@@ -1,54 +1,34 @@
+'use client';
+// REACT & REACT LIBS
+import { useRouter } from "next/navigation";
+// COMPONENTs
 import EvrazLine from "../Branding/EvrazLine";
 import Image from "next/image";
-import temp from "../../../../public/sphere/sphere2.jpg"
+import temp from "../../../../public/sphere/sphere2.jpg";
+// DATA
 
-export default function CatalogPage(){
+export default function CatalogPage(props){
+    const router = useRouter();
+    const categoriesArray = props.catalogData;
+
     return (
         <div className="my-8 px-2">
             <div className="flex justify-center pb-4">
                 <h1 className="font-semibold text-2xl">Категории продукции</h1>
             </div>
-            <div className="grid grid-cols-3 grid-flow-row gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-4 lg:gap-y-8 lg:gap-x-8">
 
-                <div className="border-[1px] border-[--border-color] px-4 pt-4 pb-2 relative">
-                    <span className="absolute left-0"><EvrazLine /></span>
-                    <h1 className="font-medium text-2xl">Строительная продукция</h1>
-                    <div className="py-4">
-                        <Image src={temp.src} className="rounded-sm" alt={'Image'} width={temp.width} height={temp.height}></Image>
-                    </div>                
-                </div>
-
-                <div className="border-[1px] border-[--border-color] px-4 pt-4 pb-2 relative">
-                    <span className="absolute left-0"><EvrazLine /></span>
-                    <h1 className="font-medium text-2xl">Железнодорожная продукция</h1>
-                    <div className="py-4">
-                        <Image src={temp.src} className="rounded-sm" alt={'Image'} width={temp.width} height={temp.height}></Image>
+            {categoriesArray.map((item) => {
+                return (
+                    <div key={item.id} className="border-[1px] border-[--border-color] px-4 pt-4 pb-2 relative">
+                        <span className="absolute left-0"><EvrazLine /></span>
+                        <h1 className="font-medium text-2xl">{item.title}</h1>
+                        <div className="py-4">
+                            <Image src={temp.src} className="rounded-sm w-full transition-opacity duration-200 hover:opacity-90" alt={'Image'} width={temp.width} height={temp.height}></Image>
+                        </div>                
                     </div>
-                </div>
-
-                <div className="border-[1px] border-[--border-color] px-4 pt-4 pb-2 relative">
-                    <span className="absolute left-0"><EvrazLine /></span>
-                    <h1 className="font-medium text-2xl">Листовой и плоский прокат</h1>
-                    <div className="py-4">
-                        <Image src={temp.src} className="rounded-sm" alt={'Image'} width={temp.width} height={temp.height}></Image>
-                    </div>                
-                </div>
-
-                <div className="border-[1px] border-[--border-color] px-4 pt-4 pb-2 relative">
-                    <span className="absolute left-0"><EvrazLine /></span>
-                    <h1 className="font-medium text-2xl">Трубная продукция</h1>
-                    <div className="py-4">
-                        <Image src={temp.src} className="rounded-sm" alt={'Image'} width={temp.width} height={temp.height}></Image>
-                    </div>                
-                </div>
-
-                <div className="border-[1px] border-[--border-color] px-4 pt-4 pb-2 relative">
-                    <span className="absolute left-0"><EvrazLine /></span>
-                    <h1 className="font-medium text-2xl">Специальные материалы</h1>
-                    <div className="py-4">
-                        <Image src={temp.src} className="rounded-sm" alt={'Image'} width={temp.width} height={temp.height}></Image>
-                    </div>                
-                </div>
+                )
+            })}
 
             </div>
         </div>
