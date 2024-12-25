@@ -33,6 +33,7 @@ model news{
 model catalog_category{
   id Int @id @default(autoincrement())
   title String
+  desc String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   items catalog_item[]
