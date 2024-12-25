@@ -46,8 +46,37 @@ export const queryOneNews = async (searchParams = {}) => {
     };
 };
 
-
 export const queryCategory = async(searchParams = {}) => {
+    let query = searchParams;
+    let options = {
+        orderBy: {
+            createdAt: 'asc',
+        },
+        ...query
+    }
+    try {
+        const queryOutput = await prisma.catalog_category.findMany(options);
+        return queryOutput;
+    } catch (error) {
+        console.error(error);
+    } finally {
+        prisma.$disconnect;
+    }
+}
+
+export const queryOneCategory = async(searchParams = {}) => {
+    let query = searchParams;
+    try {
+        const queryOutput = await prisma.catalog_category.findUnique(query);
+        return queryOutput;
+    } catch (error) {
+        console.error(error);
+    } finally {
+        prisma.$disconnect;
+    }
+}
+
+export const queryItem = async(searchParams = {}) => {
     let query = searchParams;
     let options = {
         orderBy: {
@@ -56,7 +85,7 @@ export const queryCategory = async(searchParams = {}) => {
         ...query
     }
     try {
-        const queryOutput = await prisma.catalog_category.findMany(options);
+        const queryOutput = prisma.catalog_item.findMany(options);
         return queryOutput;
     } catch (error) {
         console.error(error);
