@@ -45,3 +45,22 @@ export const queryOneNews = async (searchParams = {}) => {
         prisma.$disconnect;
     };
 };
+
+
+export const queryCategory = async(searchParams = {}) => {
+    let query = searchParams;
+    let options = {
+        orderBy: {
+            createdAt: 'desc',
+        },
+        ...query
+    }
+    try {
+        const queryOutput = await prisma.catalog_category.findMany(options);
+        return queryOutput;
+    } catch (error) {
+        console.error(error);
+    } finally {
+        prisma.$disconnect;
+    }
+}
