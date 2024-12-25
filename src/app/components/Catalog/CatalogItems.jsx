@@ -5,11 +5,12 @@ import EvrazLine from "../Branding/EvrazLine";
 import temp from "../../../../public/sphere/sphere2.jpg";
 
 export default function CatalogItems(props){
-    console.log(props);
+    const categoryData = props.category;
+    const categoryId = categoryData.id;
     return (
         <div className="my-8 px-2">
             <div className="flex justify-center pb-4">
-                <h1 className="font-semibold text-2xl">Товары категории N</h1>
+                <h1 className="font-semibold text-2xl">{categoryData.title}</h1>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-4 lg:gap-y-8 lg:gap-x-8">
 

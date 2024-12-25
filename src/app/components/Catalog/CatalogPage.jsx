@@ -20,11 +20,11 @@ export default function CatalogPage(props){
 
             {categoriesArray.map((item) => {
                 return (
-                    <div key={item.id} className="border-[1px] border-[--border-color] px-4 pt-4 pb-2 relative">
+                    <div onClick={() => router.push(`/catalog/${item.id}`)} key={item.id} className="border-[1px] group border-[--border-color] px-4 pt-4 pb-2 relative cursor-pointer">
                         <span className="absolute left-0"><EvrazLine /></span>
                         <h1 className="font-medium text-2xl">{item.title}</h1>
                         <div className="py-4">
-                            <Image src={temp.src} className="rounded-sm w-full transition-opacity duration-200 hover:opacity-90" alt={'Image'} width={temp.width} height={temp.height}></Image>
+                            <Image src={temp.src} className="rounded-sm w-full transition-opacity duration-200 group-hover:opacity-90" alt={'Image'} width={temp.width} height={temp.height}></Image>
                         </div>                
                     </div>
                 )
