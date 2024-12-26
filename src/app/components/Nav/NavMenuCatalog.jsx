@@ -3,6 +3,7 @@ import { FaAngleDown } from 'react-icons/fa';
 // COMPONENTS
 import NavMenuElement from './NavMenuElement';
 import { productionCatalog } from './NavMenuElement';
+import Link from 'next/link';
 
 export default function NavMenuCatalog(props){
     return (
@@ -11,7 +12,9 @@ export default function NavMenuCatalog(props){
             <ul style={props.catalogState ? {maxHeight: '15rem'} : {maxHeight: '0'}} className='flex transition-all duration-200 overflow-y-hidden flex-col ml-2.5 text-[1.1875rem] font-semibold capitalize'>
             {productionCatalog.map((element) => {
                 return (
-                    <li key={element.id}>{element.name}</li>
+                    <Link key={element.id} href={'/catalog'}>
+                        <li className='hover:text-gray-700 transition-colors duration-200'>{element.name}</li>
+                    </Link>
                 )
             })}
             </ul>
