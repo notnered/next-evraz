@@ -7,7 +7,7 @@ export default function ContactModal(props){
 
 
     return (
-        <div className="bg-black/25 fixed flex h-full w-full top-0 left-0 px-4" onClick={props.closeFunc}>
+        <div className="bg-black/25 fixed flex h-full w-full top-0 left-0 px-4 z-20" onClick={props.closeFunc}>
             <div className="bg-white flex flex-col w-full h-fit modalWindow my-auto max-h-[700px] mx-auto max-w-[600px] overflow-y-scroll lg:overflow-y-hidden rounded-sm z-30" onClick={(e) => e.stopPropagation()}>
                 <div className="flex flex-col px-8 py-8 h-full relative gap-y-2">
                     <div className="absolute top-4 right-4">

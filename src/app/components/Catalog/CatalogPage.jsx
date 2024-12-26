@@ -14,7 +14,7 @@ export default function CatalogPage(props){
     const router = useRouter();
     const categoriesArray = props.catalogData;
 
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] = useState(true);
 
     function switchModal(){
         setModal(!modal);
@@ -26,9 +26,11 @@ export default function CatalogPage(props){
 
     return (
         <>
-            {modal ? (
-                <ContactModal closeFunc={switchModal} sendFunc={sendMessage} />
-            ) : null}
+            <div>
+                {modal ? (
+                    <ContactModal closeFunc={switchModal} sendFunc={sendMessage} />
+                ) : null}
+            </div>
             <div className="my-8 px-2">
                 <div className="flex justify-center pb-4">
                     <h1 className="font-semibold text-2xl">Категории продукции</h1>
@@ -44,7 +46,7 @@ export default function CatalogPage(props){
                                 <p className="line-clamp-[8]">{item.desc}</p>
                             </div>
                             <div className="mt-auto pt-2">
-                                <MainButton text={'Оставить заявку'} func={() => router.push('/contact')} />
+                                <MainButton text={'Оставить заявку'} func={switchModal} />
                             </div>
                         </div>
                     )
