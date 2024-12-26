@@ -14,7 +14,7 @@ export default function CatalogPage(props){
     const router = useRouter();
     const categoriesArray = props.catalogData;
 
-    const [modal, setModal] = useState(true);
+    const [modal, setModal] = useState(false);
 
     function switchModal(){
         setModal(!modal);
