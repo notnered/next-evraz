@@ -31,7 +31,7 @@ export default function CatalogPage(props){
                     <ContactModal closeFunc={switchModal} sendFunc={sendMessage} />
                 ) : null}
             </div>
-            <div className="my-8 px-2">
+            <div className="my-8 px-4 lg:px-2">
                 <div className="flex justify-center pb-4">
                     <h1 className="font-semibold text-2xl">Категории продукции</h1>
                 </div>
