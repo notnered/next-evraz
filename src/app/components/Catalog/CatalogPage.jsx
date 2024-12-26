@@ -9,6 +9,7 @@ import temp from "../../../../public/sphere/sphere2.jpg";
 import MainButton from "../Buttons/MainButton";
 import ContactModal from "../Contact/ContactModal";
 // DATA
+import { createMessage } from "@/database/createMessage";
 
 export default function CatalogPage(props){
     const router = useRouter();
@@ -20,15 +21,11 @@ export default function CatalogPage(props){
         setModal(!modal);
     }
 
-    function sendMessage(){
-        switchModal();
-    }
-
     return (
         <>
             <div>
                 {modal ? (
-                    <ContactModal closeFunc={switchModal} sendFunc={sendMessage} />
+                    <ContactModal closeFunc={switchModal}/>
                 ) : null}
             </div>
             <div className="my-8 px-4 lg:px-2">

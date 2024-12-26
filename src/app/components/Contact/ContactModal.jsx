@@ -1,10 +1,29 @@
+'use client';
 // REACT & REACT LIBS
+import { useState } from 'react';
 import { FaXmark } from "react-icons/fa6";
 // COMPONENTS
 import MainButton from "../Buttons/MainButton";
 
 export default function ContactModal(props){
 
+    const [name, setName] = useState('');
+    const [title, setTitle] = useState('');
+    const [text, setText] = useState('');
+
+    async function sendMessage(){
+        const createMessageResult = await fetch('/api', {
+            method: 'POST',
+            body: JSON.stringify({
+                fullName: name,
+                title: title,
+                text: text,
+            })
+        });
+        props.closeFunc();
+    }
+
+    console.log(name, title, text);
 
     return (
         <div className="bg-black/25 fixed flex h-full w-full top-0 left-0 px-4 z-20" onClick={props.closeFunc}>
@@ -21,23 +40,23 @@ export default function ContactModal(props){
                     <div>
                         <label className="flex flex-col">
                             Ваше имя
-                            <input type="text" className="px-2 py-1 border-[1px] border-[--border-color] rounded-sm outline-[--border-color] text-lg" required />
+                            <input onChange={(e) => setName(e.target.value)} type="text" className="px-2 py-1 border-[1px] border-[--border-color] rounded-sm outline-[--border-color] text-lg" required />
                         </label>
                     </div>
                     <div>
                         <label className="flex flex-col">
                             Тема сообщения
-                            <input type="text" className="px-2 py-1 border-[1px] border-[--border-color] rounded-sm outline-[--border-color] text-lg" required/>
+                            <input onChange={(e) => setTitle(e.target.value)} type="text" className="px-2 py-1 border-[1px] border-[--border-color] rounded-sm outline-[--border-color] text-lg" required/>
                         </label>
                     </div>
                     <div>
                         <label className="flex flex-col">
                             Ваше сообщение
-                            <textarea rows={5} type="text" className="resize-none px-2 py-1 border-[1px] border-[--border-color] rounded-sm outline-[--border-color] text-lg" required/>
+                            <textarea onChange={(e) => setText(e.target.value)} rows={5} type="text" className="resize-none px-2 py-1 border-[1px] border-[--border-color] rounded-sm outline-[--border-color] text-lg" required/>
                         </label>
                     </div>
                     <div className="py-2">
-                        <MainButton text={'Отправить сообщение'} full={true} func={props.sendFunc} />
+                        <MainButton text={'Отправить сообщение'} full={true} func={sendMessage} />
                     </div>
                 </div>
             </div>
