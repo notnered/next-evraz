@@ -1,3 +1,5 @@
+// 'use client';
+// import { useState } from 'react';
 // COMPONENTS
 import NewsDate from '../News/NewsDate';
 import NewsSection from '../News/NewsSection';
@@ -7,17 +9,26 @@ import { queryNews } from '@/database/getQueryOutput';
 
 export default async function NewsPage() {
 
+    // const [dateFilter, setDateFilter] = useState(0);
+
     const queryParamsNews = {
         skip: 0,
         take: 5,
     };
     const data = await queryNews(queryParamsNews);
     const arrData = Array.from(data);
+    console.log(data);
+
+    const filteredArr = arrData.filter((item) => {
+        const data = item.createdAt.toLocaleString('ru-ru').split('.');
+        const month = parseInt(data[1]);
+        return month === 11;
+    })
 
     return (
         <div className='my-8 flex flex-col md:flex-row gap-x-10 px-4 lg:px-2'>
             <div className='w-full order-2 md:order-1 md:w-3/4 flex h-fit flex-col gap-y-4 md:gap-y-8'>
-                {arrData.map((element) => {
+                {filteredArr.map((element) => {
                     return (
                         <NewsSection
                             key={element.id}

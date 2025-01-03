@@ -49,8 +49,6 @@ export default async function NewsDate() {
 
     updateCount();
 
-    console.log(datesObjects);
-
     return (
         <div className='flex flex-col'>
             <div className='border-[1px] border-[--border-color] h-fit'>
