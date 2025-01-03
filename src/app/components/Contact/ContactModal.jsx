@@ -12,7 +12,7 @@ export default function ContactModal(props){
     const [text, setText] = useState('');
 
     async function sendMessage(){
-        const createMessageResult = await fetch('/api', {
+        const createMessageResult = await fetch('/api/messages', {
             method: 'POST',
             body: JSON.stringify({
                 fullName: name,
