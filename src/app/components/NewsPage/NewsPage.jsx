@@ -1,5 +1,5 @@
 // 'use client';
-// import { useState } from 'react';
+// import { useEffect, useState } from 'react';
 // COMPONENTS
 import NewsDate from '../News/NewsDate';
 import NewsSection from '../News/NewsSection';
@@ -16,8 +16,16 @@ export default async function NewsPage() {
         take: 5,
     };
     const data = await queryNews(queryParamsNews);
+
+    // function getNews(){
+    //     const data = fetch('/api/news');
+    //     const jsondata = data.json();
+    //     return jsondata;
+    // }
+
+    // console.log(getNews());
+
     const arrData = Array.from(data);
-    console.log(data);
 
     const filteredArr = arrData.filter((item) => {
         const data = item.createdAt.toLocaleString('ru-ru').split('.');
