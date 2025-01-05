@@ -1,3 +1,4 @@
+// 'use client';
 // COMPONENTS
 import { FaChevronCircleRight } from 'react-icons/fa';
 import LongEvrazLine from '../Branding/LongEvrazLine';
@@ -24,6 +25,19 @@ export default async function NewsDate() {
     const dates = [];
     const datesObjects = [];
     const data = await queryNews();
+    // function getNews(){
+    //     let newsdata;
+    //     const response = fetch('/api/news', {
+    //         method: 'GET',
+    //     });
+    //     response.then((data) => {
+    //         const jsondata = data.json();
+    //         return jsondata;
+    //     })
+    // }
+    
+    // const data = getNews();
+    // console.log(data);
     data.forEach((item) => {
         const date = item.createdAt.toLocaleDateString('ru-ru').split('.');
         const month = parseInt(date[1]);
