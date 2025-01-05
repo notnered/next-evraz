@@ -1,67 +1,71 @@
-// 'use client';
+'use client';
 // COMPONENTS
 import { FaChevronCircleRight } from 'react-icons/fa';
 import LongEvrazLine from '../Branding/LongEvrazLine';
 import MainButton from '../Buttons/MainButton';
 // DATA
 import { queryNews } from '@/database/getQueryOutput';
+import { useEffect, useState } from 'react';
 // import newsPosts from "./newsPosts";
 const monthsList = [
-    'Январь',
-    'Февраль',
-    'Март', 
-    'Апрель', 
-    'Май', 
-    'Июнь', 
-    'Июль',
-    'Август',
-    'Сентябрь',
-    'Октябрь', 
-    'Ноябрь',
-    'Декабрь',
+    'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 
+    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',
 ];
 
-export default async function NewsDate() {
-    const dates = [];
-    const datesObjects = [];
-    const data = await queryNews();
-    // function getNews(){
-    //     let newsdata;
-    //     const response = fetch('/api/news', {
-    //         method: 'GET',
-    //     });
-    //     response.then((data) => {
-    //         const jsondata = data.json();
-    //         return jsondata;
-    //     })
-    // }
-    
-    // const data = getNews();
-    // console.log(data);
-    data.forEach((item) => {
-        const date = item.createdAt.toLocaleDateString('ru-ru').split('.');
-        const month = parseInt(date[1]);
-        dates.push(month);
-    })
-    function updateCount() {
-        for (let i = 0; i < dates.length; i++) {
-            const monthIndex = dates[i];
-            const existingObj = datesObjects.find(obj => {
-                return obj.month === monthsList[monthIndex - 1]
-            });
-            if (existingObj) {
-                existingObj.count++;
-            } else {
-                const dateObj = {
-                    month: monthsList[monthIndex - 1],
-                    count: 1,
-                };
-                datesObjects.push(dateObj);
+export default function NewsDate() {
+    const [news, setNews] = useState([]);
+    const [datesObjects, setDatesObjects] = useState([]);
+
+    useEffect(() => {
+        async function fetchNews() {
+            try {
+                const response = await fetch('/api/news', {
+                    method: 'GET' 
+                    });
+                if (!response.ok) {
+                    throw new Error(`HTTP Error, status: ${response.status}`);
+                }
+                const jsondata = await response.json();
+                setNews(jsondata);
+            } catch (error) {
+                console.error("Error fetching news:", error);
             }
         }
-    }
 
-    updateCount();
+        fetchNews();
+    }, []);
+
+    useEffect(() => {
+        if (news.length > 0) {
+            const dates = news.map((item) => {
+                const date = item.createdAt.toLocaleString('ru-ru').split('-');
+                const month = date[1];
+                return parseInt(month);
+            });
+
+            function updateCount() {
+                for (let i = 0; i < dates.length; i++) {
+                    const monthIndex = dates[i];
+                    const existingObj = datesObjects.find(obj => {
+                        return obj.month === monthsList[monthIndex - 1]
+                    });
+                    if (existingObj) {
+                        existingObj.count++;
+                    } else {
+                        const dateObj = {
+                            month: monthsList[monthIndex - 1],
+                            count: 1,
+                        };
+                        datesObjects.push(dateObj);
+                    }
+                }
+            }
+
+            updateCount();
+
+            setDatesObjects([...datesObjects]);
+        }
+    }, [news]);
 
     return (
         <div className='flex flex-col'>
