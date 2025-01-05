@@ -1,12 +1,9 @@
 'use client';
 // COMPONENTS
-import { FaChevronCircleRight } from 'react-icons/fa';
 import LongEvrazLine from '../Branding/LongEvrazLine';
 import MainButton from '../Buttons/MainButton';
 // DATA
-import { queryNews } from '@/database/getQueryOutput';
 import { useEffect, useState } from 'react';
-// import newsPosts from "./newsPosts";
 const monthsList = [
     'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 
     'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',
