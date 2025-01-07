@@ -1,5 +1,5 @@
-// 'use client';
-// import { useEffect, useState } from 'react';
+'use client';
+import { useEffect, useState } from 'react';
 // COMPONENTS
 import NewsDate from '../News/NewsDate';
 import NewsSection from '../News/NewsSection';
@@ -7,7 +7,7 @@ import NewsSection from '../News/NewsSection';
 import newsData from '../News/newsPosts';
 import { queryNews } from '@/database/getQueryOutput';
 
-export default async function NewsPage() {
+export default function NewsPage() {
 
     // const [dateFilter, setDateFilter] = useState(0);
 
@@ -15,22 +15,31 @@ export default async function NewsPage() {
         skip: 0,
         take: 5,
     };
-    const data = await queryNews(queryParamsNews);
 
-    // function getNews(){
-    //     const data = fetch('/api/news');
-    //     const jsondata = data.json();
-    //     return jsondata;
-    // }
+    const [news, setNews] = useState([]);
+    const [filteredNews, setFilteredNews] = useState([]);
+    const [filter, setFilter] = useState(0);
 
-    // console.log(getNews());
+    useEffect(() => {
+        const getNews = async () => {
+            const data = await fetch('/api/news');
+            const jsondata = await data.json();
+            setNews([...jsondata]);
+        }
+        getNews();
+    }, [])
 
-    const arrData = Array.from(data);
+    const arrData = Array.from(news);
+    // console.log(arrData);
 
     const filteredArr = arrData.filter((item) => {
-        const data = item.createdAt.toLocaleString('ru-ru').split('.');
+        const data = item.createdAt.toLocaleString('ru-ru').split('-');
         const month = parseInt(data[1]);
-        return month === 11;
+        if (filter === 0){
+            return month;
+        } else {
+            return month === filter;
+        }
     })
 
     return (
@@ -42,7 +51,7 @@ export default async function NewsPage() {
                             key={element.id}
                             id = {element.id}
                             title={element.title}
-                            date={element.createdAt.toLocaleDateString('ru-ru')}
+                            date={new Date(element.createdAt).toLocaleDateString('ru-ru')}
                             description={element.text}
                             full={true}
                         />
@@ -50,7 +59,7 @@ export default async function NewsPage() {
                 })}
             </div>
             <div className='w-full order-1 md:order-2 md:w-1/4 flex flex-col'>
-                <NewsDate />
+                {/* <NewsDate /> */}
             </div>
         </div>
     );
