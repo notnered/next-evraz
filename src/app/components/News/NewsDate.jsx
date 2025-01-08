@@ -22,10 +22,11 @@ const monthsList = [
 ];
 
 export default function NewsDate() {
-    const datesObjects = [];
+    const tempDatesObjects = [];
     const [dates, setDates] = useState([]);
+    const [datesObjects, setDatesObjects] = useState([]);
     const [news, setNews] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     
     useEffect(() => {
         const getNews = async () => {
@@ -39,6 +40,7 @@ export default function NewsDate() {
     // console.log('news', news);
 
     useEffect(() => {
+        if (news.length === 0) return;
         const loopDates = [];
         news.forEach((item) => {
             const date = new Date(item.createdAt).toLocaleDateString('ru-ru').split('.');
@@ -50,25 +52,33 @@ export default function NewsDate() {
 
     // console.log(dates);
 
-    function updateCount() {
-        for (let i = 0; i < dates.length; i++) {
-            const monthIndex = dates[i];
-            const existingObj = datesObjects.find(obj => {
-                return obj.month === monthsList[monthIndex - 1]
-            });
-            if (existingObj) {
-                existingObj.count++;
-            } else {
-                const dateObj = {
-                    month: monthsList[monthIndex - 1],
-                    count: 1,
-                };
-                datesObjects.push(dateObj);
+    useEffect(() => {
+        if (dates.length === 0) return;
+        function updateCount() {
+            for (let i = 0; i < dates.length; i++) {
+                const monthIndex = dates[i];
+                const existingObj = tempDatesObjects.find(obj => {
+                    return obj.month === monthsList[monthIndex - 1]
+                });
+                if (existingObj) {
+                    existingObj.count++;
+                } else {
+                    const dateObj = {
+                        month: monthsList[monthIndex - 1],
+                        count: 1,
+                    };
+                    tempDatesObjects.push(dateObj);
+                }
             }
         }
-    }
+        updateCount();
 
-    updateCount();
+        setDatesObjects([...tempDatesObjects]);
+
+        setLoading(false);
+    }, [dates])
+
+    console.log(datesObjects);
 
     return (
         <div className='flex flex-col'>
