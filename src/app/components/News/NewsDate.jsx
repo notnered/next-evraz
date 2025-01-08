@@ -7,18 +7,8 @@ import { useState, useEffect } from 'react';
 import { PulseLoader } from 'react-spinners';
 // DATA
 const monthsList = [
-    'Январь',
-    'Февраль',
-    'Март', 
-    'Апрель', 
-    'Май', 
-    'Июнь', 
-    'Июль',
-    'Август',
-    'Сентябрь',
-    'Октябрь', 
-    'Ноябрь',
-    'Декабрь',
+    'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 
+    'Июль','Август','Сентябрь','Октябрь', 'Ноябрь','Декабрь',
 ];
 
 export default function NewsDate() {
