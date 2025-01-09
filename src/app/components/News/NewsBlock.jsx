@@ -20,11 +20,11 @@ export default function NewsBlock(){
             setLoading(true);
             const data = await fetch(`/api/news`);
             const jsondata = await data.json();
-            setNews(jsondata);
+            setNews(jsondata.slice(queryOptions.skip, queryOptions.take));
+            setLoading(false);
         }
-        getNews();
 
-        setLoading(false);
+        getNews();
     }, []);
 
     console.log(news);
@@ -45,7 +45,7 @@ export default function NewsBlock(){
                     )
                 })
             ) : (
-                news.slice(queryOptions.skip, queryOptions.take).map((news) => {
+                news.map((news) => {
                     return (
                         <NewsSection key={news.id} id={news.id} title={news.title} date={new Date(news.createdAt).toLocaleDateString('ru-ru')} full={false} />
                     )
