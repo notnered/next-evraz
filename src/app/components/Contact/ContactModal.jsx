@@ -23,7 +23,7 @@ export default function ContactModal(props){
         props.closeFunc();
     }
 
-    console.log(name, title, text);
+    // console.log(name, title, text);
 
     return (
         <div className="bg-black/25 fixed flex h-full w-full top-0 left-0 px-4 z-20" onClick={props.closeFunc}>
