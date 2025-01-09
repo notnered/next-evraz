@@ -27,7 +27,7 @@ export default function NewsBlock(){
         getNews();
     }, []);
 
-    console.log(news);
+    // console.log(news);
 
 
     return (

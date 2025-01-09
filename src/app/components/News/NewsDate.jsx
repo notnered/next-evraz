@@ -11,7 +11,7 @@ const monthsList = [
     'Июль','Август','Сентябрь','Октябрь', 'Ноябрь','Декабрь',
 ];
 
-export default function NewsDate() {
+export default function NewsDate(props) {
     const tempDatesObjects = [];
     const [dates, setDates] = useState([]);
     const [datesObjects, setDatesObjects] = useState([]);
@@ -55,6 +55,7 @@ export default function NewsDate() {
                 } else {
                     const dateObj = {
                         month: monthsList[monthIndex - 1],
+                        monthIndex: monthIndex,
                         count: 1,
                     };
                     tempDatesObjects.push(dateObj);
@@ -68,7 +69,14 @@ export default function NewsDate() {
         setLoading(false);
     }, [dates])
 
-    console.log(datesObjects);
+    // console.log(datesObjects);
+
+    const activeButton = {
+        color: 'var(--orange-color)',
+        fontWeight: '600',
+    }
+
+    // console.log(props.currentFilter);
 
     return (
         <div className='flex flex-col'>
@@ -91,6 +99,8 @@ export default function NewsDate() {
                                     <li
                                         className='text-xl font-medium transition-colors hover:text-[--orange-color] cursor-pointer w-fit select-none'
                                         key={index}
+                                        style={props.currentFilter === post.monthIndex ? activeButton : null}
+                                        onClick={() => props.clickFilter(post.monthIndex)}
                                     >
                                         {post.month} ({post.count})
                                     </li>
@@ -101,7 +111,7 @@ export default function NewsDate() {
                 </div>
             </div>
             <div className='pt-4 pb-8 md:py-4'>
-                <MainButton text={'Сбросить фильтры'} full={true} />
+                <MainButton text={'Сбросить фильтры'} full={true} func={() => props.clickFilter(0)} />
             </div>
         </div>
     );

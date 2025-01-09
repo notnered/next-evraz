@@ -4,25 +4,20 @@ import { PulseLoader } from 'react-spinners';
 // COMPONENTS
 import NewsDate from '../News/NewsDate';
 import NewsSection from '../News/NewsSection';
-// DATA
-import newsData from '../News/newsPosts';
-import { queryNews } from '@/database/getQueryOutput';
-import LoadingBar from '../Loading/LoadingBar';
 
 export default function NewsPage() {
-
-    // const [dateFilter, setDateFilter] = useState(0);
-
-    const queryParamsNews = {
-        skip: 0,
-        take: 5,
-    };
 
     const [news, setNews] = useState([]);
     const [filteredNews, setFilteredNews] = useState([]);
     const [filter, setFilter] = useState(0);
     const [loading, setLoading] = useState(true);
     const [filtering, setFiltering] = useState(false);
+    const [page, setPage] = useState(1);
+
+    const queryParamsNews = {
+        skip: 0,
+        take: 5,
+    };
 
     useEffect(() => {
         const getNews = async () => {
@@ -31,6 +26,7 @@ export default function NewsPage() {
             setNews([...jsondata]);
             setLoading(false);
         }
+
         getNews();
     }, [])
 
@@ -53,12 +49,17 @@ export default function NewsPage() {
         setFiltering(false);
     }, [news, filter])
 
+
+    function filterNews(month){
+        setFilter(parseInt(month));
+    }
+
     
     return (
         <div className='my-8 flex flex-col md:flex-row gap-x-10 px-4 lg:px-2'>
             <div className='w-full order-2 md:order-1 md:w-3/4 flex h-fit flex-col gap-y-4 md:gap-y-8'>
                 {loading || filtering ? (
-                    <div className='my-8'>
+                    <div className='my-16 flex justify-center'>
                         <PulseLoader
                             color='#F0862F'
                             size={16}
@@ -81,7 +82,7 @@ export default function NewsPage() {
                 )}
             </div>
             <div className='w-full order-1 md:order-2 md:w-1/4 flex flex-col'>
-                <NewsDate />
+                <NewsDate clickFilter={filterNews} currentFilter={filter} />
             </div>
         </div>
     );
