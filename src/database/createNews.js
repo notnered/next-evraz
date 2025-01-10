@@ -1,11 +1,10 @@
 import prisma from "./prismaClient";
 
-export const createMessage = async (messageInfo = {}) => {
-    let query = messageInfo;
+export const createNews = async (newsInfo = {}) => {
+    let query = newsInfo;
     try {
-        const results = await prisma.messages.create({
+        const results = await prisma.news.create({
             data: {
-                fullName: query.fullName,
                 title: query.title,
                 text: query.text,
             }
