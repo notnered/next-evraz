@@ -115,7 +115,7 @@ export default function NewsDate(props) {
                         <MainButton text={'Сбросить фильтры'} full={true} func={() => props.clickFilter(0)} />
                     </div>
                     <div className='md:pt-2 md:pb-2'>
-                        <MainButton text={'Добавить новость'} full={true} />
+                        <MainButton text={'Добавить новость'} full={true} func={() => props.modalFunc()} />
                     </div>
                 </div>
             </div>
