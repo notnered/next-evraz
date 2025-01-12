@@ -6,12 +6,12 @@ import MainLayout from "../components/Layouts/MainLayout";
 import { queryCategory } from "@/database/getQueryOutput";
 
 export default async function Catalog(){
-    const data = await queryCategory();
+    // const data = await queryCategory();
     return (
         <>
             <MainLayout>
                 <Hero />
-                <CatalogPage catalogData={data}/>
+                <CatalogPage />
             </MainLayout>
         </>
     )
