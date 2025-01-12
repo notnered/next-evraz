@@ -11,7 +11,6 @@ export default async function NewsBlock(){
 
     const news = await queryNews(queryOptions);
 
-
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 px-4 lg:px-2 gap-y-[1.25rem] gap-x-[2.5rem] my-8">
             {news.map((news) => {
