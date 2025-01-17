@@ -5,12 +5,9 @@ import { useEffect, useState } from 'react';
 import { PulseLoader } from "react-spinners";
 // COMPONENTs
 import EvrazLine from "../Branding/EvrazLine";
-import Image from "next/image";
-import temp from "../../../../public/sphere/sphere2.jpg";
 import MainButton from "../Buttons/MainButton";
 import ContactModal from "../Contact/ContactModal";
 // DATA
-import { createMessage } from "@/database/createMessage";
 
 export default function CatalogPage(props){
     const router = useRouter();

@@ -1,8 +1,5 @@
-import NavBar from "./components/Nav/NavBar";
 import { Open_Sans, Sofia_Sans } from "next/font/google";
 import "./globals.css";
-import FooterBlock from "./components/Footer/FooterBlock";
-import MainLayout from "./components/Layouts/MainLayout";
 
 const font = Open_Sans({
     variable: "--font-family",
