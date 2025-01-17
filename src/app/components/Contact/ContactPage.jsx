@@ -2,17 +2,20 @@
 // REACT & REACT LIBS
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
+import { PulseLoader } from 'react-spinners';
 // COMPONENTS
-
 const DynamicGeneral = dynamic(() => import('./Pages/GeneralContact'))
 const DynamicBuyers = dynamic(() => import('./Pages/BuyersContact'))
 const DynamicPartners = dynamic(() => import('./Pages/PartnersContact'))
 const DynamicMedia = dynamic(() => import('./Pages/MediaContact'))
 const DynamicApplication = dynamic(() => import('./Pages/ApplicationContact'))
 
-
 const ContactHeaderLazy = dynamic(() => import('./ContactHeader'));
-const ContactLazy = dynamic(() => import('./ContactContent'));
+const ContactLazy = dynamic(() => import('./ContactContent'), {
+    loading: () => <div className='my-16 flex justify-center'>
+        <PulseLoader color='#F0862F'size={16}/>
+    </div>
+});
 
 export default function ContactPage(){
 
