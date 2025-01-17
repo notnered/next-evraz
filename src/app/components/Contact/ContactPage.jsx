@@ -1,14 +1,18 @@
 'use client';
 // REACT & REACT LIBS
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 // COMPONENTS
-import ContactHeader from "./ContactHeader";
-import ContactContent from './ContactContent';
-import GeneralContact from './Pages/GeneralContact';
-import BuyersContact from './Pages/BuyersContact';
-import PartnersContact from './Pages/PartnersContact';
-import MediaContact from './Pages/MediaContact';
-import ApplicationContact from './Pages/ApplicationContact';
+
+const DynamicGeneral = dynamic(() => import('./Pages/GeneralContact'))
+const DynamicBuyers = dynamic(() => import('./Pages/BuyersContact'))
+const DynamicPartners = dynamic(() => import('./Pages/PartnersContact'))
+const DynamicMedia = dynamic(() => import('./Pages/MediaContact'))
+const DynamicApplication = dynamic(() => import('./Pages/ApplicationContact'))
+
+
+const ContactHeaderLazy = dynamic(() => import('./ContactHeader'));
+const ContactLazy = dynamic(() => import('./ContactContent'));
 
 export default function ContactPage(){
 
@@ -22,20 +26,20 @@ export default function ContactPage(){
     let componentID = 0;
 
     const ComponentsArray = [
-        <GeneralContact key={componentID++} />,
-        <BuyersContact key={componentID++} />,
-        <PartnersContact key={componentID++} />,
-        <MediaContact key={componentID++} />,
-        <ApplicationContact key={componentID++} />,
+        <DynamicGeneral key={componentID++} />,
+        <DynamicBuyers key={componentID++} />,
+        <DynamicPartners key={componentID++} />,
+        <DynamicMedia key={componentID++} />,
+        <DynamicApplication key={componentID++} />,
     ]
 
     return (
         <div className="my-8 flex px-4 lg:px-2">
             <div className="flex flex-col w-full">
-                <ContactHeader currentPage={page} handlePage={handlePage} />
-                <ContactContent currentPage={page}>
+                <ContactHeaderLazy currentPage={page} handlePage={handlePage} />
+                <ContactLazy currentPage={page}>
                     {ComponentsArray[page]}
-                </ContactContent>
+                </ContactLazy>
             </div>
         </div>
     )
